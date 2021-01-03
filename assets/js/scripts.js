@@ -453,7 +453,7 @@ function send_form_modal(option, target, event, path)
             {
                 check_form_errors(target, response, function()
                 {
-                    open_notification_modal('success', response.message, ((path == true) ? response.path : ''));
+                    open_notification_modal('success', response.message, ((path == true) ? response.path : false));
                 });
             }
         });
