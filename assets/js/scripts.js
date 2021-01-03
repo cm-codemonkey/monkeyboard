@@ -3,11 +3,11 @@
 /**
 * @package valkyrie.js
 *
-* @summary MonkeyBoard JS functions.
+* @summary Monkeyboard JS functions.
 *
 * @author Gersón Aarón Gómez Macías <ggomez@codemonkey.com.mx>
 * <@create> 01 de enero, 2019.
-* <@update> 01 de noviembre, 2020.
+* <@update> 03 de enero, 2021.
 *
 * @version 2.0.0.
 *
@@ -247,12 +247,11 @@ $(document).ready(function()
 *
 * @var string data: Cadena de texto que se va a buscar.
 * @var <HTML Tag> target: Etiqueta HTML en la que se va a realizar la búsqueda.
-* @var string style: (tbl, cbx) Estilo de busqueda.
-* @var string type: (normal, hidden) Tipo de busqueda.
+* @var string type: (not_hidden, hidden) Tipo de busqueda.
 */
 function search_in_table(data, target, type)
 {
-    type = (type == undefined) ? 'normal' : 'hidden';
+    type = (type == undefined || type == null || type == '') ? 'not_hidden' : type;
 
     $.each(target, function(key, value)
     {
@@ -269,7 +268,7 @@ function search_in_table(data, target, type)
             else if (result <= 0)
                 value.className = (type == 'hidden') ? ((inputs.length == 0) ? 'hidden' : ((inputs.length > 0 && inputs[0].checked == false) ? 'hidden' : '')) : 'hidden';
         }
-        else if (data.length <= 0 && type == 'normal')
+        else if (data.length <= 0 && type == 'not_hidden')
             value.className = '';
         else if (data.length <= 0 && type == 'hidden')
             value.className = (inputs.length == 0) ? 'hidden' : ((inputs.length > 0 && inputs[0].checked == false) ? 'hidden' : '');
@@ -430,8 +429,9 @@ function open_form_modal(option, target, callback)
 * @var string option: (create, update, block, unblock, delete) Tipo de envío.
 * @var <form> target: Formulario que se enviará.
 * @var Event event: Evento de formulario.
+* @var Boolean path: Identificador de recarga.
 */
-function send_form_modal(option, target, event)
+function send_form_modal(option, target, event, path)
 {
     if (option == 'create' || option == 'update' || option == 'filter')
     {
@@ -453,7 +453,7 @@ function send_form_modal(option, target, event)
             {
                 check_form_errors(target, response, function()
                 {
-                    open_notification_modal('success', response.message);
+                    open_notification_modal('success', response.message, ((path == true) ? response.path : ''));
                 });
             }
         });
@@ -539,9 +539,9 @@ function reset_form(target)
 */
 function open_notification_modal(option, message, path, timeout)
 {
-    message = (message == undefined) ? '' : message;
-    path = (path == undefined) ? ((option == 'success') ? 'reload' : false) : path;
-    timeout = (timeout == undefined) ? '500' : timeout;
+    message = (message == undefined || message == null || message == '') ? '' : message;
+    path = (path == undefined || path == null || path == '') ? ((option == 'success') ? 'reload' : false) : path;
+    timeout = (timeout == undefined || timeout == null || timeout == '') ? '500' : timeout;
 
     if (option == 'success')
     {
@@ -676,6 +676,9 @@ function uploader(option, target)
 * @param string target: Etiqueta a la que se agregará la clase.
 * @param string style: Clase de css que se agregará.
 * @param string height: Medida en la cual se agregará la clase a la etiqueta dentro del scroll down.
+* @param string lt_target: Etiqueta.
+* @param string lt_img_1: Etiqueta.
+* @param string lt_img_2: Etiqueta.
 *
 * @return object
 */
