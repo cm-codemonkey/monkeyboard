@@ -2081,6 +2081,7 @@ fieldset.fields-group div.checkbox.st-4 > div > span {
     background-color: #e0e0e0;
     font-size: 12px;
     font-weight: 400;
+    white-space: nowrap;
     color: #757575;
 }
 
