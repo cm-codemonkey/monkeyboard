@@ -240,6 +240,14 @@ $(document).ready(function()
     * @summary Escucha los signatures canvas en el on resize.
     */
     window.onresize = resize_canvas;
+
+	/**
+    * @summary Permite firmar nuevamente
+    */
+	$('[data-action="sign_again"]').on('click', function()
+    {
+        $(this).parent().addClass('hidden');
+    });
 });
 
 /**
@@ -560,6 +568,8 @@ function open_notification_modal(option, message, path, timeout)
         {
             if (path == 'reload')
                 location.reload();
+			else if (path == 'go_back')
+                window.history.back();
             else
                 window.location.href = path;
         }, timeout);

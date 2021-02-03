@@ -176,6 +176,21 @@ main.login > a > img {
     margin: 0px 5px;
 }
 
+main.login > a > strong {
+	position: relative;
+	margin-right: 10px;
+}
+
+main.login > a > strong::after {
+    content: '';
+    width: 1px;
+    height: 15px;
+    position: absolute;
+    top: 2px;
+    right: -5.5px;
+    background-color: #757575;
+}
+
 /* ------------------------------------------------------------- */
 /* Body
 /* ------------------------------------------------------------- */
@@ -445,11 +460,15 @@ header.leftbar > nav > ul > li > a > span {
     color: #fff;
 }
 
+header.leftbar > nav > ul > li > a > span > strong {
+	margin-right: 5px;
+}
+
 header.leftbar > nav > ul > li > a:hover > span {
     display: flex;
 }
 
-header.leftbar > nav > ul > li > a.logotype > img {
+header.leftbar > nav > ul > li > a > img {
 	width: 20px;
 }
 
@@ -610,10 +629,19 @@ header.rightbar nav > ul:last-child {
 
 header.rightbar nav > ul > li > h4 {
     width: auto;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
     margin-bottom: 5px;
     font-size: 14px;
     font-weight: 600;
     color: #212121;
+}
+
+header.rightbar nav > ul > li > h4 > img {
+	width: auto;
+	height: 20px;
+	margin-right: 5px;
 }
 
 header.rightbar nav > ul > li > a {
@@ -627,11 +655,16 @@ header.rightbar nav > ul > li > a {
     color: #757575;
 }
 
+header.rightbar nav > ul > li > a > strong {
+	margin-right: 5px;
+}
+
 header.rightbar nav > ul > li > a.reverse {
     justify-content: flex-end;
 }
 
-header.rightbar nav > ul > li > a > i {
+header.rightbar nav > ul > li > a > i,
+header.rightbar nav > ul > li > a > figure {
     width: 25px;
     height: 25px;
     display: flex;
@@ -644,9 +677,15 @@ header.rightbar nav > ul > li > a > i {
     color: #757575;
 }
 
-header.rightbar nav > ul > li > a.reverse > i {
+header.rightbar nav > ul > li > a.reverse > i,
+header.rightbar nav > ul > li > a.reverse > figure {
     margin-right: 0px;
     margin-left: 5px;
+}
+
+header.rightbar nav > ul > li > a > figure > img {
+	width: auto;
+	height: 20px;
 }
 
 /* --- */
@@ -773,7 +812,7 @@ header.modbar > div.buttons fieldset.fields-group div.compound.st-4-left > span 
 /* ------------------------------------------------------------- */
 
 /* ------ */
-body > main {
+body > main.workspace {
     width: 100%;
     min-height: 100vh;
     padding: 140px 0px 0px 45px;
@@ -781,25 +820,24 @@ body > main {
     background-color: #fff;
 }
 
-body > main::after {
+body > main.workspace::after {
     content: '';
     display: block;
     clear: both;
 }
 
-body > main.unmodbar {
+body > main.workspace.unmodbar {
     padding-top: 80px;
 }
 
-/*  */
-body > main.to-use {
+body > main.workspace.to-use {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-body > main.to-use > a {
+body > main.workspace.to-use > a {
     width: 80px;
     height: 80px;
     display: flex;
@@ -811,7 +849,7 @@ body > main.to-use > a {
     font-weight: 400;
 }
 
-body > main.to-use > p {
+body > main.workspace.to-use > p {
     font-size: 14px;
     font-weight: 400;
     color: #757575;
@@ -1909,7 +1947,7 @@ fieldset.fields-group div.signature > canvas {
     box-sizing: border-box;
 }
 
-fieldset.fields-group div.signature > div {
+fieldset.fields-group div.signature > div.sign_by_first_time {
     right: 5px;
     bottom: 10px;
     left: 5px;
@@ -1921,7 +1959,7 @@ fieldset.fields-group div.signature > div {
     box-sizing: border-box;
 }
 
-fieldset.fields-group div.signature > div > a {
+fieldset.fields-group div.signature > div.sign_by_first_time > a {
     width: 30px;
     height: 30px;
     display: flex;
@@ -1932,6 +1970,20 @@ fieldset.fields-group div.signature > div > a {
     background-color: #e0e0e0;
     font-size: 14px;
     color: #757575;
+}
+
+fieldset.fields-group div.signature > div.sign_again {
+	position: absolute;
+	top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	flex-direction: column;
+	padding: 10px;
+    box-sizing: border-box;
 }
 
 /* Checkboxes and radios */
