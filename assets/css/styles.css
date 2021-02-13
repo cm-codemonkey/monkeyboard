@@ -3035,6 +3035,18 @@ fieldset.fields-group div.button > button {
     color: #757575;
 }
 
+fieldset.fields-group div.button > a.auto,
+fieldset.fields-group div.button > button.auto {
+    width: auto;
+    font-size: 14px;
+}
+
+fieldset.fields-group div.button > a.auto > i,
+fieldset.fields-group div.button > button.auto > i {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
 fieldset.fields-group div.button > a > span,
 fieldset.fields-group div.button > button > span {
     width: auto;
