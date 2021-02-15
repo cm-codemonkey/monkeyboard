@@ -1870,6 +1870,17 @@ fieldset.fields-group:last-child {
     margin-bottom: 0px;
 }
 
+@media (max-width: 768px) {
+
+    fieldset.fields-group {
+        margin-bottom: 20px;
+    }
+
+    fieldset.fields-group:last-child {
+        margin-bottom: 0px;
+    }
+}
+
 /* Inputs, textareas and selects */
 fieldset.fields-group div.text {
     width: 100%;
@@ -3204,7 +3215,7 @@ form > fieldset.fields-group > .row {
     }
 
     form > fieldset.fields-group > .row > [class*="span"] {
-        margin-bottom: 10px !important;
+        margin-bottom: 20px !important;
     }
 
     form > fieldset.fields-group > .row > [class*="span"]:last-child {
