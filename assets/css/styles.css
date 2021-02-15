@@ -2273,7 +2273,7 @@ fieldset.fields-group div.compound > input:disabled {
 /*  */
 fieldset.fields-group div.compound.st-1-left > input {
     padding-right: 20px;
-    padding-left: 120px;
+    padding-left: 110px;
 }
 
 fieldset.fields-group div.compound.st-1-right > input {
@@ -2296,12 +2296,12 @@ fieldset.fields-group div.compound.st-1-right > select {
 }
 
 fieldset.fields-group div.compound.st-1-left > select {
-    left: 2.5px;
+    left: 0px;
     border-radius: 5px 0px 0px 5px;
 }
 
 fieldset.fields-group div.compound.st-1-right > select {
-    right: 2.5px;
+    right: 0px;
     border-radius: 0px 50px 50px 0px;
 }
 
