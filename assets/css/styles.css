@@ -2821,6 +2821,39 @@ fieldset.fields-group div.compound.st-9 > div > select.error {
     border: 1px solid #f44336;
 }
 
+/*  */
+
+fieldset.fields-group div.compound.st-10 {
+    width: 100%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 5px;
+    background-color: #eee;
+}
+
+fieldset.fields-group div.compound.st-10 > select {
+	width: calc(100% / 3);
+	height: 100%;
+	padding: 0px 20px;
+	border: 0px;
+	border-right: 2px dashed #fff;
+	box-sizing: border-box;
+	background-color: #eee;
+	font-size: 12px;
+    font-weight: 400;
+}
+
+fieldset.fields-group div.compound.st-10 > select:first-child {
+	border-radius: 5px 0px 0px 5px;
+}
+
+fieldset.fields-group div.compound.st-10 > select:last-child {
+	border-right: 0px;
+	border-radius: 0px 5px 5px 0px;
+}
+
 /* Low uploaders */
 fieldset.fields-group div.uploader[data-low-uploader] {
     width: 100%;
