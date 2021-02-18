@@ -510,7 +510,7 @@ function send_form_modal(option, target, event, path)
 */
 function transform_form_modal(option, target)
 {
-    if (option == 'create')
+    if (option == 'create' || option == 'filter')
     {
         target.find('form').find('button[type="submit"]').html('<i class="fas fa-check"></i>');
         target.find('form').find('button[type="submit"]').removeClass('warning');
