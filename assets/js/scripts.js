@@ -471,7 +471,7 @@ function send_form_modal(option, target, event, path)
             }
         });
     }
-    else if (option == 'block' || option == 'unblock')
+    else if (option == 'block' || option == 'unblock' || option == 'restore')
     {
         $.ajax({
             type: 'POST',
