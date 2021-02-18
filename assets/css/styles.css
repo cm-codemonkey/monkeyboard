@@ -739,6 +739,16 @@ header.modbar > div.buttons > a {
     color: #757575;
 }
 
+header.modbar > div.buttons > a.auto {
+    width: auto;
+    font-size: 14px;
+}
+
+header.modbar > div.buttons > a.auto > i {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
 header.modbar > div.buttons > a.unfocus {
     background-color: #fff;
 }
