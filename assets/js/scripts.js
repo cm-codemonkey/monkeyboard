@@ -395,7 +395,7 @@ function generate_string(option, length, target)
 */
 var action = null;
 var id = null;
-var filter = false;
+var filter = true;
 
 /**
 * @summary Abre el modal para trabajar en el CRUD.
