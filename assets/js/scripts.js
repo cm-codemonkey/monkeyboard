@@ -391,9 +391,11 @@ function generate_string(option, length, target)
 *
 * @var string action: Almacena la acción que ejecutará el CRUD.
 * @var int id: Almacena el id del registro en la base de datos con el que se trabajará en el CRUD.
+* @var boolean filter: Almacena el indicador de filtrar o terminar filtrado de una lista.
 */
 var action = null;
 var id = null;
+var filter = false;
 
 /**
 * @summary Abre el modal para trabajar en el CRUD.
@@ -449,6 +451,9 @@ function send_form_modal(option, target, event, path)
 
         data.append('action', action);
         data.append('id', id);
+
+        if (option == 'filter')
+            data.append('filter', filter);
 
         $.ajax({
             type: 'POST',
