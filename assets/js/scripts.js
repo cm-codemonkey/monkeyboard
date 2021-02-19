@@ -248,6 +248,18 @@ $(document).ready(function()
     {
         $(this).parent().addClass('hidden');
     });
+
+    /**
+    * @summary Comparte una URL por RRSS en móviles
+    */
+    $('[data-action="share"]').on('click', function()
+    {
+        navigator.share({
+            title: $(this).data('title'),
+            text: $(this).data('text'),
+            url: $(this).data('url')
+        });
+    });
 });
 
 /**
